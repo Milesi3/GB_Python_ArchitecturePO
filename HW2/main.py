@@ -40,13 +40,11 @@ class GemGenerator(ItemFabric):
         return GemReward()
 
 
-# Define a new game item, SilverReward
 class SilverReward(IGameItem):
     def open(self):
         print('Silver')
 
 
-# Define a new item generator, SilverGenerator
 class SilverGenerator(ItemFabric):
     def create_item(self):
         print('Create new bag')
@@ -54,9 +52,7 @@ class SilverGenerator(ItemFabric):
 
 
 if __name__ == '__main__':
-    # Create a list of item generators including the new ones
     lst = [GoldGenerator(), GemGenerator(), SilverGenerator()]
 
-    # Open random chests 20 times
     for i in range(20):
         choice(lst).open_reward()
